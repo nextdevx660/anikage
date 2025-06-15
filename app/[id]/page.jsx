@@ -36,7 +36,6 @@ export default function Page() {
                                         wishlist: arrayUnion(animeToAdd),
                               });
 
-                              console.log("✅ Added to wishlist:", animeToAdd);
                     } catch (error) {
                               console.error("❌ Error adding to wishlist:", error);
                     }
