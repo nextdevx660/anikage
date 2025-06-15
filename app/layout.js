@@ -22,13 +22,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${outfit.className} bg-[#2d2b2c]`}
       >
-        {/* <ClickRedirectWrapper> */}
+        <ClickRedirectWrapper> 
         <AuthProvider>
           <Header />
           {children}
           <Footer />
         </AuthProvider>
-        {/* </ClickRedirectWrapper> */}
+       </ClickRedirectWrapper> 
       </body>
     </html>
   );
