@@ -78,9 +78,11 @@ export default function Header() {
           }
 
           {!user ?
-            <button className="bg-red-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-amber-300 transition">
+            <Link href={'/signup'} className="bg-red-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-amber-300 transition">
+            <button>
               Login
-            </button> :
+            </button>
+            </Link> :
             <div>
               {userData?.photoUrl && <Link href={'/profile'}><Image src={userData?.photoUrl} alt='logo' width={100} height={100} className='w-8 h-8 rounded-full' /></Link>}
             </div>
