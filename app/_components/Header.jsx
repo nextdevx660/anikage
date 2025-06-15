@@ -68,12 +68,14 @@ export default function Header() {
             <Search size={24} />
           </div>
 
-          <div
+          {
+            user &&  <div
             className="text-white cursor-pointer hover:bg-white/20 transition font-bold"
             onClick={() => setShowSearchInput(prev => !prev)}
           >
             <Bell size={24} />
           </div>
+          }
 
           {!user ?
             <button className="bg-red-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-amber-300 transition">
