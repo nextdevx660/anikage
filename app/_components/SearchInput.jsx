@@ -118,7 +118,7 @@ export default function SearchInput() {
                                                             </div>
                                                   ))}
                                                   <Link href={`/search?keyword=${keyword}`}>
-                                                            <div className='bg-amber-200 px-2 py-4 flex items-center justify-center'>
+                                                            <div className='bg-red-200 px-2 py-4 flex items-center justify-center'>
                                                                       <h2 className='flex items-center gap-1'>
                                                                                 View All Results
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#1f1f1f">
