@@ -78,7 +78,7 @@ export default function Header() {
           }
 
           {!user ?
-            <Link href={'/signup'} className="bg-red-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-amber-300 transition">
+            <Link href={'/signup'} className="bg-red-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-red-300 transition">
             <button>
               Login
             </button>
