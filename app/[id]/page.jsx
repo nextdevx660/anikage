@@ -122,7 +122,7 @@ export default function Page() {
                                                             <div className='flex flex-col md:flex-row items-center md:items-start gap-6'>
                                                                       {/* Poster */}
                                                                       <div className='relative w-40 md:w-50 flex-shrink-0'>
-                                                                                {animeData?.adultContent == true ? <h2 className='bg-red-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
+                                                                                {animeData?.adultContent == true ? <h2 className='bg-green-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
                                                                                 <Image
                                                                                           src={poster}
                                                                                           alt={`${title} Poster`}
@@ -140,7 +140,7 @@ export default function Page() {
                                                                                 <div className='flex flex-wrap items-center justify-center md:justify-start text-xs gap-2'>
                                                                                           <div className='gap-0.5 flex items-center'>
                                                                                                     {rating && <span className='bg-white text-black px-2 py-0.5 rounded-tl-sm rounded-bl-sm'>{rating}</span>}
-                                                                                                    {quality && <span className='bg-red-200 text-black px-2 py-0.5'>{quality}</span>}
+                                                                                                    {quality && <span className='bg-green-200 text-black px-2 py-0.5'>{quality}</span>}
                                                                                                     {sub && <span className='bg-green-200 text-black px-2 py-0.5'>{sub} SUB</span>}
                                                                                                     {dub && <span className='bg-purple-200 text-black px-2 py-0.5 flex items-center gap-1'><Mic size={14} /> {dub} DUB</span>}
                                                                                           </div>
@@ -154,7 +154,7 @@ export default function Page() {
                                                                                 <div className='flex items-center gap-3 mt-2'>
                                                                                           {episodesId && (
                                                                                                     <Link href={`/watch/${episodesId}`}>
-                                                                                                              <button className='bg-red-200 text-black rounded-full px-6 py-2.5 flex items-center gap-2 hover:bg-red-200 transition-colors'>
+                                                                                                              <button className='bg-green-200 text-black rounded-full px-6 py-2.5 flex items-center gap-2 hover:bg-green-200 transition-colors'>
                                                                                                                         <Play size={18} /> Watch now
                                                                                                               </button>
                                                                                                     </Link>
@@ -182,7 +182,7 @@ export default function Page() {
                                                                                           <div className='flex items-center gap-4 pt-4'>
                                                                                                     <Image src="/share.gif" alt="your avatar" width={60} height={60} className="rounded-full border border-white" />
                                                                                                     <div className='flex items-center gap-2'>
-                                                                                                              <h2 className='text-md text-white'><span className='text-red-200 font-semibold'>Share Anime</span> to your friends</h2>
+                                                                                                              <h2 className='text-md text-white'><span className='text-green-200 font-semibold'>Share Anime</span> to your friends</h2>
                                                                                                               <button className='bg-[#1da1f2] p-2 rounded-full hover:opacity-90'><Twitter size={16} /></button>
                                                                                                               <button className='bg-[#1877f2] p-2 rounded-full hover:opacity-90'><Facebook size={16} /></button>
                                                                                                               <button className='bg-green-500 p-2 rounded-full hover:opacity-90'><Share2 size={16} /></button>
@@ -229,7 +229,7 @@ export default function Page() {
                               </div>
                               <div className='px-3 md:flex'>
                                         <div>
-                                                  <h2 className='text-2xl font-semibold text-red-200 mt-10'>Recomended for You</h2>
+                                                  <h2 className='text-2xl font-semibold text-green-200 mt-10'>Recomended for You</h2>
                                                   <RecomendedCard recomended={recomended} />
                                         </div>
                                         <Genre />

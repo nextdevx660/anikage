@@ -19,7 +19,7 @@ export default function TopUpcoming() {
 
           return (
                     <div className='px-3 mt-5'>
-                              <h2 className='text-2xl text-red-200 font-bold py-3 flex items-center justify-between'>Top Upcoming
+                              <h2 className='text-2xl text-green-200 font-bold py-3 flex items-center justify-between'>Top Upcoming
                                         <span>
                                                   <Link href={'/top-upcoming'} className='flex items-center gap-2 text-gray-500 text-[15px]'>
                                                             View More
@@ -35,7 +35,7 @@ export default function TopUpcoming() {
                                                             <Link href={item?.id} key={index}>
                                                                       <div>
                                                                                 <div className='relative'>
-                                                                                          {item?.adultContent == true ? <h2 className='bg-red-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
+                                                                                          {item?.adultContent == true ? <h2 className='bg-green-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
                                                                                           {item && <Image src={item?.poster} alt='poster' width={500} height={500} className='aspect-[2/3]' />}
                                                                                           <div className='absolute bottom-4 left-2 flex items-center gap-1'>
                                                                                                     {item?.tvInfo?.sub &&<h2 className='bg-green-200 px-1 py-0.5 text-black text-[12px] rounded-md flex items-center gap-1'><span className='bg-black/90 text-white text-[12px] px-1'>cc</span> {item?.tvInfo.sub}</h2>}

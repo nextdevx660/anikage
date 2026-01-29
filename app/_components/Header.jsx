@@ -49,7 +49,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <MenuWithSidebar />
           <Link href={'/'}>
-            <h1 className='text-white text-3xl md:text-4xl font-bold'>An<span className='text-red-200'>!</span>Look</h1>
+            <h1 className='text-white text-3xl md:text-4xl font-bold'>An<span className='text-green-200'>!</span>Look</h1>
           </Link>
 
           {/* Search input visible only on md and up */}
@@ -78,7 +78,7 @@ export default function Header() {
           }
 
           {!user ?
-            <Link href={'/signup'} className="bg-red-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-red-300 transition">
+            <Link href={'/signup'} className="bg-green-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-green-300 transition">
             <button>
               Login
             </button>

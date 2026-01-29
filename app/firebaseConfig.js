@@ -7,13 +7,13 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCnhP4hxcpmRdXDn4r_kcM7E9Q_V_NeNGA",
-  authDomain: "animarket-87a97.firebaseapp.com",
-  projectId: "animarket-87a97",
-  storageBucket: "animarket-87a97.firebasestorage.app",
-  messagingSenderId: "816724908460",
-  appId: "1:816724908460:web:52df431fcb1812ccd84209",
-  measurementId: "G-DS6KRYX2C5"
+  apiKey: "AIzaSyABFr3W5XhLWNeTdT4WhgE8ar8B-DDqYB0",
+  authDomain: "yustream-7c588.firebaseapp.com",
+  projectId: "yustream-7c588",
+  storageBucket: "yustream-7c588.firebasestorage.app",
+  messagingSenderId: "304829403351",
+  appId: "1:304829403351:web:0a948a12e611ec2217e092",
+  measurementId: "G-G8SQTB5EBW"
 };
 
 const app = initializeApp(firebaseConfig);

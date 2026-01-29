@@ -11,18 +11,18 @@ export default function TrendingCard({ trending }) {
                               {trending &&
                                         trending.map((item, index) => (
                                                   <Link href={item?.id} key={index}>
-                                                            <div className="flex-shrink-0 w-50 h-80">
+                                                            <div className="flex-shrink-0 w-40 md:w-50 h-80">
                                                                       <div className="relative">
                                                                                 {item?.poster && (
                                                                                           <Image
                                                                                                     src={item?.poster}
                                                                                                     alt={item?.title}
-                                                                                                    width={400}
-                                                                                                    height={400}
-                                                                                                    className="w-50 h-70"
+                                                                                                    width={300}
+                                                                                                    height={300}
+                                                                                                    className="w-40 md:w-60 aspect-[3/4]"
                                                                                           />
                                                                                 )}
-                                                                                <h2 className="absolute font-bold text-black text-xl left-0 bg-white top-0 p-1 md:text-red-200 md:top-2 md:left-2 md:bg-transparent">#{item?.number}</h2>
+                                                                                <h2 className="absolute font-bold text-black text-xl left-0 bg-white top-0 p-1 md:text-green-200 md:top-2 md:left-2 md:bg-transparent">#{item?.number}</h2>
                                                                       </div>
                                                                       <h2 className="text-white font-bold hidden md:block">{(item?.title).slice(0, 17)}...</h2>
                                                             </div>

@@ -45,7 +45,7 @@ export default function LoginPage() {
                                                             value={email}
                                                             onChange={(e) => setEmail(e.target.value)}
                                                             placeholder='Email Address'
-                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-red-300 text-gray-900'
+                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-green-300 text-gray-900'
                                                   />
                                         </div>
 
@@ -55,21 +55,21 @@ export default function LoginPage() {
                                                             value={password}
                                                             onChange={(e) => setPassword(e.target.value)}
                                                             placeholder='Password'
-                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-red-300 text-gray-900'
+                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-green-300 text-gray-900'
                                                   />
                                         </div>
 
                                         <button
                                                   type="submit"
                                                   disabled={loading}
-                                                  className="w-full py-3 bg-red-200 hover:bg-red-300 text-black font-bold rounded-lg disabled:opacity-50"
+                                                  className="w-full py-3 bg-green-200 hover:bg-green-300 text-black font-bold rounded-lg disabled:opacity-50"
                                         >
                                                   {loading ? 'Logging in...' : 'Login'}
                                         </button>
 
                                         <p className="mt-4 text-center text-gray-400">
                                                   Don't have an account?{' '}
-                                                  <a href="/signup" className="text-red-300 hover:underline">
+                                                  <a href="/signup" className="text-green-300 hover:underline">
                                                             Sign Up
                                                   </a>
                                         </p>

@@ -96,7 +96,7 @@ export default function Page() {
                   <div
                     className={`${episodeId !== item?.id
                       ? `flex items-center justify-between ${bgColors[index % 2]} px-4 py-2 cursor-pointer hover:bg-[#3a3738]`
-                      : `flex items-center justify-between bg-gray-200/50 text-red-200 px-4 py-2 cursor-pointer hover:bg-[#3a3738] border-l-4 border-red-200`
+                      : `flex items-center justify-between bg-gray-200/50 text-green-200 px-4 py-2 cursor-pointer hover:bg-[#3a3738] border-l-4 border-green-200`
                       }`}
                   >
                     <div className='flex items-center gap-5'>
@@ -105,7 +105,7 @@ export default function Page() {
                     </div>
                     {episodeId == item?.id && (
                       <div>
-                        <PlayCircle className='text-red-200' />
+                        <PlayCircle className='text-green-200' />
                       </div>
                     )}
                   </div>
@@ -123,7 +123,7 @@ export default function Page() {
               <div>
                 <div className='flex md:flex-col gap-3'>
                   <div className='relative'>
-                    {animeData?.adultContent == true ? <h2 className='bg-red-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
+                    {animeData?.adultContent == true ? <h2 className='bg-green-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
                     {animeData?.poster && <Image src={animeData?.poster} alt={animeData?.title} width={500} height={500} className='w-25 md:w-30' />}
                   </div>
                   <div className='flex flex-col gap-2'>
@@ -131,7 +131,7 @@ export default function Page() {
                     <div className='flex flex-wrap items-center justify-center md:justify-start text-xs gap-2'>
                       <div className='gap-0.5 flex items-center'>
                         {animeData?.animeInfo?.tvInfo?.rating && <span className='bg-white text-black px-2 py-0.5 rounded-tl-sm rounded-bl-sm'>{animeData?.animeInfo?.tvInfo?.rating}</span>}
-                        {animeData?.animeInfo?.tvInfo?.quality && <span className='bg-red-200 text-black px-2 py-0.5'>{animeData?.animeInfo?.tvInfo?.quality}</span>}
+                        {animeData?.animeInfo?.tvInfo?.quality && <span className='bg-green-200 text-black px-2 py-0.5'>{animeData?.animeInfo?.tvInfo?.quality}</span>}
                         {animeData?.animeInfo?.tvInfo?.sub && <span className='bg-green-200 text-black px-2 py-0.5'>{animeData?.animeInfo?.tvInfo?.sub}</span>}
                         {animeData?.animeInfo?.tvInfo?.dub && <span className='bg-purple-200 text-black px-2 py-0.5 flex items-center gap-1'><Mic size={14} /> {animeData?.animeInfo?.tvInfo?.dub}</span>}
                       </div>
@@ -148,7 +148,7 @@ export default function Page() {
                     <p className="font-light">
                       <span className="font-semibold">Overview: </span> {animeData?.animeInfo?.Overview}
                     </p> :
-                    <p className='text-red-200'>Overview is not available</p>
+                    <p className='text-green-200'>Overview is not available</p>
                   }
                 </div>
                 <p className='text-sm text-gray-200 mt-5'>AniLook is the best site to watch <span className='text-white'>{animeData?.title}</span> SUB online, or you can even watch <span className='font-semibold text-white'>{animeData?.title}</span> DUB in HD quality. You can also find <span className='font-semibold text-white'>{animeData?.animeInfo?.Studios}</span> anime on AniLook website.</p>
@@ -161,7 +161,7 @@ export default function Page() {
       </div>
       <div className='md:flex'>
         <div className='px-3'>
-          <h2 className='text-2xl font-semibold text-red-200 mt-10'>Recomended for You</h2>
+          <h2 className='text-2xl font-semibold text-green-200 mt-10'>Recomended for You</h2>
           <RecomendedCard recomended={recomended} />
         </div>
         <Genre />

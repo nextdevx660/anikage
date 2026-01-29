@@ -52,7 +52,7 @@ export default function ProfilePage() {
         <img
           src={userData.photoUrl || 'https://i.pravatar.cc/150?img=8'}
           alt="User Avatar"
-          className="w-32 h-32 rounded-full border-4 border-red-200 shadow-lg object-cover"
+          className="w-32 h-32 rounded-full border-4 border-green-200 shadow-lg object-cover"
         />
         <div>
           <h1 className="text-3xl font-bold">{userData.name || 'No Name'}</h1>
@@ -62,7 +62,7 @@ export default function ProfilePage() {
 
       {/* Wishlist Section */}
       <div className="mt-10">
-        <h2 className="text-2xl font-semibold mb-4 border-b-2 border-red-200 w-fit pb-1">
+        <h2 className="text-2xl font-semibold mb-4 border-b-2 border-green-200 w-fit pb-1">
           Wishlist
         </h2>
 

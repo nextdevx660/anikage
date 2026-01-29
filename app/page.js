@@ -14,7 +14,7 @@ export default function Home() {
 
 
   return (
-    <div className="bg-[#2d2b2c]">
+    <div className="bg-[#2d2b2c] no-scrollbar">
       <Slider />
       <TrendingAnime />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 bg-[#2d2b2c] mt-5">

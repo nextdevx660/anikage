@@ -126,24 +126,24 @@ export default function FilterPage() {
                     return (
                               <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-[#2d2b2c]">
                                         <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40">«</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">«</button>
                                         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40">‹</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">‹</button>
 
                                         {visiblePages.map((page) => (
                                                   <button key={page} onClick={() => handlePageChange(page)}
                                                             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${currentPage === page
-                                                                      ? 'bg-red-200 text-black'
-                                                                      : 'bg-[#1f1f1f] text-gray-300 hover:bg-red-200 hover:text-black'
+                                                                      ? 'bg-green-200 text-black'
+                                                                      : 'bg-[#1f1f1f] text-gray-300 hover:bg-green-200 hover:text-black'
                                                                       }`}>
                                                             {page}
                                                   </button>
                                         ))}
 
                                         <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40">›</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">›</button>
                                         <button onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40">»</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">»</button>
                               </div>
                     );
           };
@@ -169,7 +169,7 @@ export default function FilterPage() {
                                                                       <Button
                                                                                 key={genre.id}
                                                                                 onClick={() => handleGenreToggle(genre.id)}
-                                                                                className={`text-sm ${selectedGenres.includes(genre.id) ? 'bg-red-200 text-black' : 'bg-transparent border border-gray-500 text-white'}`}
+                                                                                className={`text-sm ${selectedGenres.includes(genre.id) ? 'bg-green-200 text-black' : 'bg-transparent border border-gray-500 text-white'}`}
                                                                       >
                                                                                 {genre.name}
                                                                       </Button>
@@ -177,18 +177,18 @@ export default function FilterPage() {
                                                   </div>
                                         </div>
 
-                                        <Button onClick={handleFilter} className='mt-2 mb-5 md:mt-4 bg-red-200 hover:bg-red-300 text-black px-6 py-3'>
+                                        <Button onClick={handleFilter} className='mt-2 mb-5 md:mt-4 bg-green-200 hover:bg-green-300 text-black px-6 py-3'>
                                                   Apply Filters
                                         </Button>
                               </div>
 
                               {loading ? (
                                         <div className="flex justify-center items-center mt-10">
-                                                  <Loader2Icon className="h-10 w-10 animate-spin text-red-200" />
+                                                  <Loader2Icon className="h-10 w-10 animate-spin text-green-200" />
                                         </div>
                               ) : (
                                         <div>
-                                                  <h2 className='text-2xl text-red-200 font-semibold px-3 mb-2'>Filter Results</h2>
+                                                  <h2 className='text-2xl text-green-200 font-semibold px-3 mb-2'>Filter Results</h2>
                                                   <FilterCard list={list} />
 
                                                   {totalPages > 1 && (
@@ -203,7 +203,7 @@ export default function FilterPage() {
 const FilterSelect = ({ label, value, onValueChange, options }) => (
           <div className="flex flex-wrap gap-1">
                     <Select value={value} onValueChange={onValueChange}>
-                              <SelectTrigger className="bg-[#383536] border-gray-500 text-red-200">
+                              <SelectTrigger className="bg-[#383536] border-gray-500 text-green-200">
                                         <div className='flex items-center gap-3'>
                                                   {label && <Label className="text-white text-sm">{label}</Label>}
                                                   <SelectValue placeholder="Select" />

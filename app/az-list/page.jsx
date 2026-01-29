@@ -55,14 +55,14 @@ export default function Page() {
         <button
           onClick={() => handlePageChange(1)}
           disabled={currentPage === 1}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40"
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40"
         >
           «
         </button>
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40"
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40"
         >
           ‹
         </button>
@@ -72,8 +72,8 @@ export default function Page() {
             key={page}
             onClick={() => handlePageChange(page)}
             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${currentPage === page
-                ? 'bg-red-200 text-black'
-                : 'bg-[#1f1f1f] text-gray-300 hover:bg-red-200 hover:text-black'
+                ? 'bg-green-200 text-black'
+                : 'bg-[#1f1f1f] text-gray-300 hover:bg-green-200 hover:text-black'
               }`}
           >
             {page}
@@ -83,14 +83,14 @@ export default function Page() {
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === pages}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40"
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40"
         >
           ›
         </button>
         <button
           onClick={() => handlePageChange(pages)}
           disabled={currentPage === pages}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-red-200 hover:text-black disabled:opacity-40"
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40"
         >
           »
         </button>

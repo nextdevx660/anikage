@@ -50,7 +50,7 @@ export default function Footer() {
   return (
     <div className='bg-[#2d2b2c] pt-20'>
       <div className='p-5 flex items-center gap-4'>
-        <h1 className='text-white text-3xl md:text-4xl font-bold border-r-1 border-gray-600 p-2'>An<span className='text-red-200'>!</span>Look</h1>
+        <h1 className='text-white text-3xl md:text-4xl font-bold border-r-1 border-gray-600 p-2'>An<span className='text-green-200'>!</span>Look</h1>
         <div className="flex flex-wrap gap-2">
           {icons.map((item, idx) => (
             <a
@@ -73,12 +73,12 @@ export default function Footer() {
 
       <div className='flex flex-wrap gap-2 px-5'>
         <Link href={'/az-list/'}>
-          <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-red-200 hover:text-black'>All</button>
+          <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-green-200 hover:text-black'>All</button>
         </Link>
         {
           list.map((item, index) => (
             <Link href={'/az-list/' + item?.value} key={index}>
-              <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-red-200 hover:text-black'>{item?.name}</button>
+              <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-green-200 hover:text-black'>{item?.name}</button>
             </Link>
           ))
         }

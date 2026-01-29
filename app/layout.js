@@ -1,7 +1,7 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
-import ClickRedirectWrapper from "./wrapper";
+// import ClickRedirectWrapper from "./wrapper";
 import Footer from "./_components/Footer";
 import { AuthProvider } from "./_context/AuthContext";
 
@@ -20,15 +20,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${outfit.className} bg-[#2d2b2c]`}
+        className={`${outfit.className} bg-[#2d2b2c] no scrollbar`}
       >
-        <ClickRedirectWrapper> 
+        {/* <ClickRedirectWrapper>  */}
         <AuthProvider>
           <Header />
           {children}
           <Footer />
         </AuthProvider>
-       </ClickRedirectWrapper> 
+       {/* </ClickRedirectWrapper>  */}
       </body>
     </html>
   );
