@@ -17,7 +17,7 @@ export default function Page() {
   const [animeData, setAnimeData] = useState(null);
   const [recomended, setRecomended] = useState([])
   const [episodeId, setEpisodeId] = useState()
-
+  const [otherSeasons, setOtherSeasons] = useState([]);
 
   const ep = searchParams.get('ep') || ''
   const id = params?.id || '';
@@ -41,18 +41,25 @@ export default function Page() {
     }
   };
 
+  console.log(animeData);
+
+
+
   const getAnimeInfo = async () => {
     try {
       const res = await axios.get(`https://anime-api-zeta-hazel.vercel.app/api/info?id=${params.id}`);
       setAnimeData(res.data.results.data);
       setRecomended(res.data.results.data?.recommended_data)
+      // console.log(res?.data);
+      setOtherSeasons(res.data.results.seasons);
+
     } catch (error) {
       console.error("Error fetching anime info:", error);
     }
   };
 
 
- 
+
 
   useEffect(() => {
     getEpisodes()
@@ -158,6 +165,40 @@ export default function Page() {
         </div>
 
 
+      </div>
+      <div className='px-4 pt-4 pb-6'>
+        {/* Title added as per image */}
+        <h2 className="text-white text-xl font-semibold mb-4">Watch more seasons of this anime</h2>
+
+        {otherSeasons.length > 0 && (
+          <div className='flex items-center flex-wrap gap-4 mt-5'>
+            {otherSeasons.map((season, idx) => (
+              <Link href={`/${season.id}`} key={idx}
+                className={`relative group cursor-pointer w-40 h-16 overflow-hidden rounded-md border-2 
+            ${animeData?.data_id == season?.data_id ? 'border-green-200 text-green-200' : 'border-transparent text-white'}`}>
+                <div>
+                  {/* Background Image */}
+                  <Image
+                    src={season?.season_poster}
+                    alt='poster'
+                    fill // Next.js 13+ layout fill
+                    className="object-cover opacity-50"
+                  />
+
+                  {/* Dark Overlay + Dotted Pattern Layer */}
+                  <div className="absolute inset-0 bg-black/40 bg-dotted-pattern opacity-80"></div>
+
+                  {/* Season Title Text */}
+                  <div className="absolute inset-0 flex items-center justify-center p-2">
+                    <span className="text-white font-bold text-center drop-shadow-md">
+                      {season?.season || `Season ${idx + 1}`}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
       <div className='md:flex'>
         <div className='px-3'>

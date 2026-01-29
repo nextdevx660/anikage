@@ -43,6 +43,14 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+
+/* In your globals.css */
+.bg-dotted-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 4px 4px;
+  /* Dots ka gap control karne ke liye */
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -54,6 +62,7 @@
   scrollbar-width: none;
   /* Firefox */
 }
+
 .iframe-container {
   overflow: hidden;
   width: 400px;
@@ -140,6 +149,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

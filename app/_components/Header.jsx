@@ -46,14 +46,17 @@ export default function Header() {
           }`}
       >
         {/* Left Section */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center">
           <MenuWithSidebar />
           <Link href={'/'}>
-            <h1 className='text-white text-3xl md:text-4xl font-bold'>An<span className='text-green-200'>!</span>Look</h1>
+            <Image src="/logo.png" alt="logo" 
+            width={100}
+            height={100}
+            className='w-full h-10' />
           </Link>
 
           {/* Search input visible only on md and up */}
-          <div className="hidden md:block">
+          <div className="hidden md:block pl-4">
             <SearchInput />
           </div>
         </div>
