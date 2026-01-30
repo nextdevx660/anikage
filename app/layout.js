@@ -4,6 +4,7 @@ import Header from "./_components/Header";
 // import ClickRedirectWrapper from "./wrapper";
 import Footer from "./_components/Footer";
 import { AuthProvider } from "./_context/AuthContext";
+import AdsProvider from "./adsProvider";
 
 
 
@@ -23,13 +24,15 @@ export default function RootLayout({ children }) {
         className={`${outfit.className} bg-[#2d2b2c] no scrollbar`}
       >
         {/* <ClickRedirectWrapper>  */}
-        <AuthProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AuthProvider>
-       {/* </ClickRedirectWrapper>  */}
+        <AdsProvider>
+          <AuthProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AuthProvider>
+        </AdsProvider>
+        {/* </ClickRedirectWrapper>  */}
       </body>
-    </html>
+    </html >
   );
 }

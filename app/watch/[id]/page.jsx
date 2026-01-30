@@ -168,7 +168,7 @@ export default function Page() {
       </div>
       <div className='px-4 pt-4 pb-6'>
         {/* Title added as per image */}
-        <h2 className="text-white text-xl font-semibold mb-4">Watch more seasons of this anime</h2>
+        {otherSeasons.length > 0 && <h2 className="text-white text-xl font-semibold mb-4">Watch more seasons of this anime</h2>}
 
         {otherSeasons.length > 0 && (
           <div className='flex items-center flex-wrap gap-4 mt-5'>
