@@ -50,7 +50,7 @@ export default function AdsProvider({ children }) {
                                         onLoad={() => {
                                                   // Jab script load ho jaye, tab init karein
                                                   if (window.a3klsam && window.a3klsam.init) {
-                                                            window.a3klsam.init(420691);
+                                                            window.a3klsam.init(420713);
                                                   }
                                         }}
                               />
