@@ -83,8 +83,8 @@ export default function Slider() {
 
           if (loading) {
                     return (
-                              <div className="flex items-center justify-center h-[300px] md:h-[600px] bg-gray-900 text-white">
-                                        <Loader2Icon className='text-white animate-spin' size={35} />
+                              <div className="flex animate-pulse items-center justify-center h-[300px] md:h-[600px] bg-neutral-900 text-white">
+                                        {/* <Loader2Icon className='text-white animate-spin' size={35} /> */}
                               </div>
                     )
           }

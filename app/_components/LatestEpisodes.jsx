@@ -8,15 +8,20 @@ import React, { useEffect, useState } from 'react'
 
 export default function LatestEpisodes() {
           const [latestEps, setLatestEps] = useState([])
+          const [loading, setLoading] = useState(false)
 
           useEffect(() => {
                     getLatestEp()
           }, [])
           const getLatestEp = async () => {
+                    setLoading(true)
                     const res = await axios.get('https://anime-api-zeta-hazel.vercel.app/api/')
                     setLatestEps(res?.data?.results?.latestEpisode)
+                    setLoading(false)
           }
 
+
+          
           return (
                     <div className='px-3 mt-5'>
                               <h2 className='text-2xl text-green-200 font-bold py-3 flex items-center justify-between'>Latest Episodes

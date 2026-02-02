@@ -101,7 +101,7 @@ export default function Page() {
 
 
           return (
-                    <div className='relative min-h-screen w-full bg-[#2d2b2c] pt-10'>
+                    <div className='relative min-h-screen w-full bg-neutral-950 pt-10'>
                               {/* Imagen de Fondo con Desenfoque */}
                               <div className='absolute inset-0 h-[70vh]'>
                                         <Image
@@ -196,7 +196,7 @@ export default function Page() {
                                                   </div>
 
                                                   {/* --- Barra Lateral de Información (Derecha) --- */}
-                                                  <div className='lg:col-span-4 bg-[#2d2b2c]/60 p-4 rounded-lg h-fit'>
+                                                  <div className='lg:col-span-4 bg-neutral-950/60 p-4 rounded-lg h-fit'>
                                                             <div className='space-y-3 text-sm'>
                                                                       <div className="max-h-30 overflow-y-auto block md:hidden text-white">
                                                                                 <p className="font-light">

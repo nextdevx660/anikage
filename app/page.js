@@ -1,5 +1,6 @@
 'use client'
 
+import AnilookBanner from "./_components/AnilookBanner";
 import Genre from "./_components/Genre";
 import LatestEpisodes from "./_components/LatestEpisodes";
 import NewOnAniLook from "./_components/NewOnAniLook";
@@ -14,10 +15,11 @@ export default function Home() {
 
 
   return (
-    <div className="bg-[#2d2b2c] no-scrollbar">
+    <div className="bg-neutral-950 no-scrollbar">
       <Slider />
       <TrendingAnime />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 bg-[#2d2b2c] mt-5">
+      <AnilookBanner />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 bg-neutral-950 mt-5">
         <TopAiring />
         <MostPopular />
         <MostFavorite />

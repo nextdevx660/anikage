@@ -9,7 +9,7 @@ import React from 'react'
 export default function SearchCard({ searchSuggestions, keyword }) {
 
           return (
-                    <div className='pt-20 p-5 bg-[#2d2b2c]'>
+                    <div className='pt-20 p-5 bg-neutral-950'>
                               <h2 className='text-2xl text-green-200 font-semibold mb-2'>Search Result for: {keyword}</h2>
                               <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 items-center gap-4'>
                                         {searchSuggestions &&

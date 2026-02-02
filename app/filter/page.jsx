@@ -50,7 +50,7 @@ export default function FilterPage() {
           const [list, setAnimeList] = useState([]);
           const [totalPages, setTotalPages] = useState(1);
           const [loading, setLoading] = useState(false);
- 
+
           const currentPage = parseInt(searchParams.get('page') || '1');
           const [type, setType] = useState(searchParams.get('type') || 'all');
           const [status, setStatus] = useState(searchParams.get('status') || 'all');
@@ -124,7 +124,7 @@ export default function FilterPage() {
                     }
 
                     return (
-                              <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-[#2d2b2c]">
+                              <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-neutral-950">
                                         <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}
                                                   className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">«</button>
                                         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}
@@ -169,7 +169,7 @@ export default function FilterPage() {
                                                                       <Button
                                                                                 key={genre.id}
                                                                                 onClick={() => handleGenreToggle(genre.id)}
-                                                                                className={`text-sm ${selectedGenres.includes(genre.id) ? 'bg-green-200 text-black' : 'bg-transparent border border-gray-500 text-white'}`}
+                                                                                className={`text-sm ${selectedGenres.includes(genre.id) ? 'bg-green-200 text-black hover:bg-green-300' : 'bg-neutral-800  hover:bg-neutral-900 text-white'}`}
                                                                       >
                                                                                 {genre.name}
                                                                       </Button>

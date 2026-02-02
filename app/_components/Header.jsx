@@ -9,13 +9,18 @@ import MenuWithSidebar from './MenuIcon';
 import { useAuth } from '../_context/AuthContext';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
   const [userData, setUserData] = useState({})
   const [isScrolled, setIsScrolled] = useState(false);
   const [showSearchInput, setShowSearchInput] = useState(false);
   const { user } = useAuth()
+  const router = useRouter()
 
+  const redirectToNotify = () => {
+    router.push('/notification')
+  }
 
   const getUserData = async () => {
     const docRef = doc(db, 'anilook_users', user.uid)
@@ -76,7 +81,7 @@ export default function Header() {
             className="text-white cursor-pointer hover:bg-white/20 transition font-bold"
             onClick={() => setShowSearchInput(prev => !prev)}
           >
-            <Bell size={24} />
+            <Bell size={24} onClick={redirectToNotify} />
           </div>
           }
 

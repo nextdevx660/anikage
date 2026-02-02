@@ -50,7 +50,7 @@ export default function page() {
     }
 
     return (
-      <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-[#2d2b2c]">
+      <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-neutral-950">
         <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}
           className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">«</button>
         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}
@@ -74,8 +74,8 @@ export default function page() {
     );
   };
   return (
-    <div className='md:flex bg-[#2d2b2c] pt-15'>
-      <div className="bg-[#2d2b2c] min-h-screen px-4">
+    <div className='md:flex bg-neutral-950 pt-15'>
+      <div className="bg-neutral-950 min-h-screen px-4">
         {loading ? (
           <div className="flex justify-center items-center h-screen text-white text-lg animate-pulse">
             <Loader2Icon className='text-white animate-spin' size={35} />

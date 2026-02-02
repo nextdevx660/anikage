@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${outfit.className} bg-[#2d2b2c] no scrollbar`}
+        className={`${outfit.className} bg-neutral-950 no scrollbar`}
       >
         {/* <ClickRedirectWrapper>  */}
         <AdsProvider>

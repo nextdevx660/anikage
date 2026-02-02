@@ -17,7 +17,7 @@ export default function TrendingAnime() {
                     
           }
           return (
-                    <div className='px-4 py-6 bg-[#2d2b2c]'>
+                    <div className='px-4 py-6 bg-neutral-950'>
                               <h2 className='text-green-200 font-bold text-2xl'>Trending</h2>
                               <TrendingCard trending={trending} />
                     </div>

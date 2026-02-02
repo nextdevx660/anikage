@@ -69,12 +69,12 @@ export default function Page() {
 
 
   const bgColors = [
-    'bg-[#2d2b2c]', 'bg-[#1e1c1d]'
+    'bg-neutral-950', 'bg-[#1e1c1d]'
   ]
 
   return (
-    <div className='bg-[#2d2b2c]'>
-      <div className="bg-[#2d2b2c] grid grid-cols-1 md:grid-cols-5 pt-20 w-full gap-0 md:gap-0 items-start">
+    <div className='bg-neutral-950'>
+      <div className="bg-neutral-950 grid grid-cols-1 md:grid-cols-5 pt-20 w-full gap-0 md:gap-0 items-start">
         {/* Streaming Video - Mobile me sabse upar, desktop me center */}
         <div className="order-1 md:order-2 md:col-span-3">
           <div>

@@ -70,7 +70,7 @@ export default function SearchInput() {
                                                             onKeyDown={handleKeyDown} // 👈 Added handler
                                                   />
                                                   <Search size={20} className="cursor-pointer text-gray-600" />
-                                                  <button className="bg-[#2d2b2c]/80 rounded text-white px-2 py-1 text-xs hover:bg-[#2d2b2c] transition">
+                                                  <button className="bg-neutral-950/80 rounded text-white px-2 py-1 text-xs hover:bg-neutral-950 transition">
                                                             <Link href={'/filter'}>
                                                                       Filter
                                                             </Link>
@@ -80,7 +80,7 @@ export default function SearchInput() {
 
                               {/* Suggestions Dropdown */}
                               {suggestions.length > 0 && (
-                                        <div className="absolute w-screen md:w-[400px] bg-[#2d2b2c] shadow-lg z-10">
+                                        <div className="absolute w-screen md:w-[400px] bg-neutral-950 shadow-lg z-10">
                                                   {suggestions.map((sug, index) => (
                                                             <div
                                                                       key={index}

@@ -20,7 +20,7 @@ export function TopAiring() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-[#2d2b2c] font-bold text-lg px-5'>Top Airings</h2>
+                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Top Airings</h2>
                               <div className='mt-5'>
                                         {
                                                   topAirings &&
@@ -70,7 +70,7 @@ export function MostPopular() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-[#2d2b2c] font-bold text-lg px-5'>Most Popular</h2>
+                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Most Popular</h2>
                               <div className='mt-5'>
                                         {
                                                   mostPops &&
@@ -120,7 +120,7 @@ export function MostFavorite() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-[#2d2b2c] font-bold text-lg px-5'>Most Favorite</h2>
+                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Most Favorite</h2>
                               <div className='mt-5'>
                                         {
                                                   favs &&
@@ -170,7 +170,7 @@ export function LatestCompleted() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-[#2d2b2c] font-bold text-lg px-5'>Latest Completed</h2>
+                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Latest Completed</h2>
                               <div className='mt-5'>
                                         {
                                                   latests &&

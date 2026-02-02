@@ -60,7 +60,7 @@ export default function TopTenTabs() {
 
 
           return (
-                    <div className="bg-[#454243] p-4 w-full max-w-md mx-auto">
+                    <div className="bg-neutral-800 p-4 w-full max-w-md mx-auto">
                               <Tabs defaultValue="today" className="w-full">
                                         <div className="flex items-center justify-between mb-4">
                                                   <h2 className="text-green-200 font-bold text-2xl">Top 10</h2>

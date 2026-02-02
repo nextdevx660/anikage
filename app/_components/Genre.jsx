@@ -40,7 +40,7 @@ export default function Genre() {
 
           return (
                     <div className='mt-6 py-2 md:w-[70vw] flex flex-col'>
-                              <div className='bg-[#454243] p-2'>
+                              <div className='bg-neutral-800 p-2'>
                                         <h2 className='text-2xl text-green-200 font-bold mb-2 px-3'>Genres</h2>
                                         <div className="flex flex-wrap gap-2 px-3"> {/* Added flex-wrap and gap for better layout */}
                                                   {genres.map((item, index) => (

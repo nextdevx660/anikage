@@ -39,14 +39,14 @@ export default function ProfilePage() {
 
   if (!userData) {
     return (
-      <div className="min-h-screen flex justify-center items-center text-white bg-[#2d2b2c]">
+      <div className="min-h-screen flex justify-center items-center text-white bg-neutral-950">
         <Loader2Icon className="text-white animate-spin" size={35} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#2d2b2c] text-white py-10 px-4 md:px-20 mt-10">
+    <div className="min-h-screen bg-neutral-950 text-white py-10 px-4 md:px-20 mt-10">
       {/* Profile Info */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
         <img

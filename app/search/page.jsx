@@ -56,7 +56,7 @@ export default function Page() {
     }
 
     return (
-      <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-[#2d2b2c]">
+      <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-neutral-950">
         <button
           onClick={() => handlePageChange(1)}
           disabled={currentPage === 1}

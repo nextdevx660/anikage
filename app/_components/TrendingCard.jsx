@@ -32,8 +32,8 @@ export default function TrendingCard({ trending }) {
                               {
                                         trending.length == 0 &&
                                         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
-                                                  <div className="flex-shrink-0 w-50 h-80 bg-[#1e1c1d] animate-pulse" key={index}>
-                                                            {item}
+                                                  <div className="flex-shrink-0 w-50 h-70 bg-neutral-900 animate-pulse" key={index}>
+                                                            {/* {item} */}
                                                   </div>
                                         ))
                               }

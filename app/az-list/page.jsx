@@ -51,7 +51,7 @@ export default function Page() {
     }
 
     return (
-      <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-[#2d2b2c]">
+      <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-neutral-950">
         <button
           onClick={() => handlePageChange(1)}
           disabled={currentPage === 1}
@@ -99,7 +99,7 @@ export default function Page() {
   }
 
   return (
-    <div className="bg-[#2d2b2c] min-h-screen px-4 pt-15">
+    <div className="bg-neutral-950 min-h-screen px-4 pt-15">
       {loading ? (
         <div className="flex justify-center items-center h-screen text-white text-lg font-semibold animate-pulse">
           <Loader2Icon className='text-white animate-spin' size={35} />

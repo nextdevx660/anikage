@@ -48,7 +48,7 @@ const list = [
 
 export default function Footer() {
   return (
-    <div className='bg-[#2d2b2c] pt-20'>
+    <div className='bg-neutral-950 pt-20'>
       <div className='p-5 flex items-center gap-4'>
         <h1 className='text-white text-3xl md:text-4xl font-bold border-r-1 border-gray-600 p-2'>An<span className='text-green-200'>!</span>Look</h1>
         <div className="flex flex-wrap gap-2">
