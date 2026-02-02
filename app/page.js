@@ -1,5 +1,7 @@
 'use client'
 
+import AdsBanner from "./_components/AdsBanner";
+// import AdsBanner300x250 from "./_components/AdsBanner300x250";
 import AnilookBanner from "./_components/AnilookBanner";
 import Genre from "./_components/Genre";
 import LatestEpisodes from "./_components/LatestEpisodes";
@@ -30,6 +32,17 @@ export default function Home() {
           <LatestEpisodes />
           <NewOnAniLook />
           <TopUpcoming />
+          <div>
+            <h2 className="text-2xl text-white px-4 pt-4 pb-2 font-bold">Sponserships</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center gap-10 md:gap-2">
+              <AdsBanner />
+              <AdsBanner />
+              <AdsBanner />
+              <AdsBanner />
+              <AdsBanner />
+              <AdsBanner />
+            </div>
+          </div>
         </div>
         <Genre />
       </div>
