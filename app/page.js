@@ -33,8 +33,8 @@ export default function Home() {
           <NewOnAniLook />
           <TopUpcoming />
           <div>
-            <h2 className="text-2xl text-white px-4 pt-4 pb-2 font-bold">Sponserships</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center gap-10 md:gap-2">
+            <h2 className="text-2xl text-white pt-4 pb-2 font-bold">Sponserships</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center gap-6 md:gap-2">
               <AdsBanner />
               <AdsBanner />
               <AdsBanner />
