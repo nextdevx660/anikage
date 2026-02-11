@@ -24,13 +24,13 @@ export default function RootLayout({ children }) {
         className={`${outfit.className} bg-neutral-950 no scrollbar`}
       >
         {/* <ClickRedirectWrapper>  */}
-        <AdsProvider>
+        // <AdsProvider>
           <AuthProvider>
             <Header />
             {children}
             <Footer />
           </AuthProvider>
-        </AdsProvider>
+        // </AdsProvider>
         {/* </ClickRedirectWrapper>  */}
       </body>
     </html >
