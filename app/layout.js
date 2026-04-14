@@ -5,7 +5,7 @@ import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import { AuthProvider } from "./_context/AuthContext";
 import { Toaster } from "sonner";
-// import AdsProvider from "./adsProvider";
+import { Analytics } from "@vercel/analytics/next"
 
 
 
@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
             {children}
             <Toaster />
             <Footer />
+            <Analytics />
           </AuthProvider>
         {/* // </AdsProvider> */}
         {/* </ClickRedirectWrapper>  */}
