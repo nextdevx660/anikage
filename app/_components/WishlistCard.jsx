@@ -19,7 +19,7 @@ export default function WishlistCard({ list }) {
 
                               // Extract `results.data` from each response
                               const formatted = responses.map((res) => res.data?.results?.data);
-                              setAnimeData(formatted);
+                              setAnimeData(formatted.reverse());
                     } catch (error) {
                               console.error('Error fetching anime data:', error);
                     } finally {
@@ -44,7 +44,7 @@ export default function WishlistCard({ list }) {
                                         <Link href={`/${item?.id}`} key={index}>
                                                   <div>
                                                             <div className='relative'>
-                                                                      {item?.adultContent == true ? <h2 className='bg-green-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
+                                                                      {item?.adultContent == true ? <h2 className='bg-rose-600 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
                                                                       {item && <Image src={item?.poster} alt='poster' width={500} height={500} className='aspect-[2/3]' />}
                                                             </div>
                                                             <div className='flex flex-col text-white'>

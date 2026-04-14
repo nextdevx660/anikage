@@ -52,24 +52,24 @@ export default function page() {
     return (
       <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-neutral-950">
         <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">«</button>
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">«</button>
         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">‹</button>
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">‹</button>
 
         {visiblePages.map((page) => (
           <button key={page} onClick={() => handlePageChange(page)}
             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${currentPage === page
-              ? 'bg-green-200 text-black'
-              : 'bg-[#1f1f1f] text-gray-300 hover:bg-green-200 hover:text-black'
+              ? 'bg-rose-500 text-white'
+              : 'bg-[#1f1f1f] text-gray-300 hover:bg-rose-500 hover:text-white'
               }`}>
             {page}
           </button>
         ))}
 
         <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">›</button>
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">›</button>
         <button onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages}
-          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">»</button>
+          className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">»</button>
       </div>
     );
   };

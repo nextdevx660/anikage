@@ -5,6 +5,8 @@ import { Mic, Mic2Icon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { BsFillBadgeCcFill } from "react-icons/bs";
+
 
 export function TopAiring() {
           const [topAirings, setTopAirings] = useState([])
@@ -20,7 +22,7 @@ export function TopAiring() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Top Airings</h2>
+                              <h2 className='text-rose-500 bg-neutral-950 font-bold text-lg px-5'>Top Airings</h2>
                               <div className='mt-5'>
                                         {
                                                   topAirings &&
@@ -32,11 +34,11 @@ export function TopAiring() {
                                                                                                     {item && <Image src={item?.poster} alt={item?.title} width={300} height={300} className='w-15 h-20 rounded-sm' />}
                                                                                           </div>
                                                                                           <div className='flex flex-col gap-1'>
-                                                                                                    <h2 className='text-white hover:text-green-200 font-semibold'>{item?.title}</h2>
+                                                                                                    <h2 className='text-white hover:text-rose-500 font-semibold'>{item?.title}</h2>
                                                                                                     <div className='flex items-center gap-3'>
                                                                                                               <div className='flex items-center gap-0.5'>
-                                                                                                                        <h2 className='bg-green-200 px-1 py-0.5 text-black text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><span className='bg-black/90 text-white text-[8px] px-1'>cc</span> {item?.tvInfo.sub}</h2>
-                                                                                                                        <h2 className='bg-purple-200 px-1 py-0.5 text-black text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={14} /></span>{item?.tvInfo.dub}</h2>
+                                                                                                                        <h2 className='bg-rose-500 px-1 py-0.5 text-white text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><BsFillBadgeCcFill size={15}/> {item?.tvInfo.sub}</h2>
+                                                                                                                        <h2 className='bg-[#00e5a0] px-1 py-0.5 text-white text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={15} /></span>{item?.tvInfo.dub}</h2>
                                                                                                               </div>
                                                                                                               <h2 className='text-white/60'>• {item.tvInfo?.showType}</h2>
                                                                                                     </div>
@@ -70,7 +72,7 @@ export function MostPopular() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Most Popular</h2>
+                              <h2 className='text-rose-500 bg-neutral-950 font-bold text-lg px-5'>Most Popular</h2>
                               <div className='mt-5'>
                                         {
                                                   mostPops &&
@@ -82,11 +84,11 @@ export function MostPopular() {
                                                                                                     {item && <Image src={item?.poster} alt={item?.title} width={300} height={300} className='w-15 h-20 rounded-sm' />}
                                                                                           </div>
                                                                                           <div className='flex flex-col gap-1'>
-                                                                                                    <h2 className='text-white hover:text-green-200 font-semibold'>{item?.title}</h2>
+                                                                                                    <h2 className='text-white hover:text-rose-500 font-semibold'>{item?.title}</h2>
                                                                                                     <div className='flex items-center gap-3'>
                                                                                                               <div className='flex items-center gap-0.5'>
-                                                                                                                        <h2 className='bg-green-200 px-1 py-0.5 text-black text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><span className='bg-black/90 text-white text-[8px] px-1'>cc</span> {item?.tvInfo.sub}</h2>
-                                                                                                                        <h2 className='bg-purple-200 px-1 py-0.5 text-black text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={14} /></span>{item?.tvInfo.dub}</h2>
+                                                                                                                        <h2 className='bg-rose-500 px-1 py-0.5 text-white text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><BsFillBadgeCcFill size={15}/> {item?.tvInfo.sub}</h2>
+                                                                                                                        <h2 className='bg-[#00e5a0] px-1 py-0.5 text-white text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={15} /></span>{item?.tvInfo.dub}</h2>
                                                                                                               </div>
                                                                                                               <h2 className='text-white/60'>• {item.tvInfo?.showType}</h2>
                                                                                                     </div>
@@ -120,7 +122,7 @@ export function MostFavorite() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Most Favorite</h2>
+                              <h2 className='text-rose-500 bg-neutral-950 font-bold text-lg px-5'>Most Favorite</h2>
                               <div className='mt-5'>
                                         {
                                                   favs &&
@@ -132,11 +134,11 @@ export function MostFavorite() {
                                                                                                     {item && <Image src={item?.poster} alt={item?.title} width={300} height={300} className='w-15 h-20 rounded-sm' />}
                                                                                           </div>
                                                                                           <div className='flex flex-col gap-1'>
-                                                                                                    <h2 className='text-white hover:text-green-200 font-semibold'>{item?.title}</h2>
+                                                                                                    <h2 className='text-white hover:text-rose-500 font-semibold'>{item?.title}</h2>
                                                                                                     <div className='flex items-center gap-3'>
                                                                                                               <div className='flex items-center gap-0.5'>
-                                                                                                                        <h2 className='bg-green-200 px-1 py-0.5 text-black text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><span className='bg-black/90 text-white text-[8px] px-1'>cc</span> {item?.tvInfo.sub}</h2>
-                                                                                                                        <h2 className='bg-purple-200 px-1 py-0.5 text-black text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={14} /></span>{item?.tvInfo.dub}</h2>
+                                                                                                                        <h2 className='bg-rose-500 px-1 py-0.5 text-white text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><BsFillBadgeCcFill size={15}/> {item?.tvInfo.sub}</h2>
+                                                                                                                        <h2 className='bg-[#00e5a0] px-1 py-0.5 text-white text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={15} /></span>{item?.tvInfo.dub}</h2>
                                                                                                               </div>
                                                                                                               <h2 className='text-white/60'>• {item.tvInfo?.showType}</h2>
                                                                                                     </div>
@@ -170,7 +172,7 @@ export function LatestCompleted() {
           }
           return (
                     <div>
-                              <h2 className='text-green-200 bg-neutral-950 font-bold text-lg px-5'>Latest Completed</h2>
+                              <h2 className='text-rose-500 bg-neutral-950 font-bold text-lg px-5'>Latest Completed</h2>
                               <div className='mt-5'>
                                         {
                                                   latests &&
@@ -182,11 +184,11 @@ export function LatestCompleted() {
                                                                                                     {item && <Image src={item?.poster} alt={item?.title} width={300} height={300} className='w-15 h-20 rounded-sm' />}
                                                                                           </div>
                                                                                           <div className='flex flex-col gap-1'>
-                                                                                                    <h2 className='text-white hover:text-green-200 font-semibold'>{item?.title}</h2>
+                                                                                                    <h2 className='text-white hover:text-rose-500 font-semibold'>{item?.title}</h2>
                                                                                                     <div className='flex items-center gap-3'>
                                                                                                               <div className='flex items-center gap-0.5'>
-                                                                                                                        <h2 className='bg-green-200 px-1 py-0.5 text-black text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><span className='bg-black/90 text-white text-[8px] px-1'>cc</span> {item?.tvInfo.sub}</h2>
-                                                                                                                        <h2 className='bg-purple-200 px-1 py-0.5 text-black text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={14} /></span>{item?.tvInfo.dub}</h2>
+                                                                                                                        <h2 className='bg-rose-500 px-1 py-0.5 text-white text-[10px] rounded-bl-md rounded-tl-md flex items-center gap-1'><BsFillBadgeCcFill size={15}/> {item?.tvInfo.sub}</h2>
+                                                                                                                        <h2 className='bg-[#00e5a0] px-1 py-0.5 text-white text-[10px] flex items-center gap-1 rounded-tr-md rounded-br-md'><span><Mic size={15} /></span>{item?.tvInfo.dub}</h2>
                                                                                                               </div>
                                                                                                               <h2 className='text-white/60'>• {item.tvInfo?.showType}</h2>
                                                                                                     </div>

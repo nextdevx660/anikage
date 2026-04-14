@@ -33,7 +33,7 @@ export default function Page() {
                                         name: name,
                                         email: email,
                                         wishlist: [],
-                                        photoUrl: '/user.png'
+                                        photoUrl: 'https://res.cloudinary.com/djgk45zha/image/upload/q_auto/f_auto/v1776151154/One_Piece_-_Mugiwara_Flag_Logo_PNG_Vector_EPS_Free_Download_ziqgyc.jpg'
                               }).then(() => {
                                         console.log('data saved');
                               })
@@ -56,32 +56,32 @@ export default function Page() {
                                                             value={name}
                                                             onChange={(e) => setName(e.target.value)}
                                                             placeholder='Full Name'
-                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-green-300 text-gray-900'
+                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-rose-600 text-gray-900'
                                                   />
                                                   <input
                                                             type='email'
                                                             value={email}
                                                             onChange={(e) => setEmail(e.target.value)}
                                                             placeholder='Email Address'
-                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-green-300 text-gray-900'
+                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-rose-600 text-gray-900'
                                                   />
                                                   <input
                                                             type='password'
                                                             value={password}
                                                             onChange={(e) => setPassword(e.target.value)}
                                                             placeholder='Password'
-                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-green-300 text-gray-900'
+                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-rose-600 text-gray-900'
                                                   />
                                                   <button
                                                             type='submit'
                                                             disabled={loading}
-                                                            className='w-full py-3 mt-2 bg-green-200 hover:bg-green-300 text-black font-bold rounded-lg disabled:opacity-50'
+                                                            className='w-full py-3 mt-2 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-lg disabled:opacity-50'
                                                   >
                                                             {loading ? 'Signing Up...' : 'Signup'}
                                                   </button>
                                         </form>
                                         <p className='text-sm text-gray-400 mt-6 text-center'>
-                                                  Already have an account? <span className='text-green-300 cursor-pointer hover:underline'><Link href='/login'>Login</Link></span>
+                                                  Already have an account? <span className='text-rose-600 cursor-pointer hover:underline'><Link href='/login'>Login</Link></span>
                                         </p>
                               </div>
                     </div>

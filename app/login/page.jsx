@@ -28,7 +28,7 @@ export default function LoginPage() {
           };
 
           return (
-                    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-gray-900 via-zinc-800 to-black">
+                    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-gray-900 via-zinc-800 to-white">
                               <form
                                         onSubmit={handleLogin}
                                         className="bg-[#3c3a3b] p-8 rounded-lg w-full max-w-md text-white"
@@ -45,7 +45,7 @@ export default function LoginPage() {
                                                             value={email}
                                                             onChange={(e) => setEmail(e.target.value)}
                                                             placeholder='Email Address'
-                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-green-300 text-gray-900'
+                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-rose-600 text-gray-900'
                                                   />
                                         </div>
 
@@ -55,21 +55,21 @@ export default function LoginPage() {
                                                             value={password}
                                                             onChange={(e) => setPassword(e.target.value)}
                                                             placeholder='Password'
-                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-green-300 text-gray-900'
+                                                            className='w-full px-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-rose-600 text-gray-900'
                                                   />
                                         </div>
 
                                         <button
                                                   type="submit"
                                                   disabled={loading}
-                                                  className="w-full py-3 bg-green-200 hover:bg-green-300 text-black font-bold rounded-lg disabled:opacity-50"
+                                                  className="w-full py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-lg disabled:opacity-50"
                                         >
                                                   {loading ? 'Logging in...' : 'Login'}
                                         </button>
 
                                         <p className="mt-4 text-center text-gray-400">
                                                   Don't have an account?{' '}
-                                                  <a href="/signup" className="text-green-300 hover:underline">
+                                                  <a href="/signup" className="text-rose-600 hover:underline">
                                                             Sign Up
                                                   </a>
                                         </p>

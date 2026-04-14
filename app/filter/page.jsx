@@ -20,18 +20,18 @@ import { Loader2Icon } from 'lucide-react';
 const genres = [
           { id: 1, name: "Action" }, { id: 2, name: "Adventure" }, { id: 3, name: "Cars" },
           { id: 4, name: "Comedy" }, { id: 5, name: "Dementia" }, { id: 6, name: "Demons" },
-          { id: 7, name: "Drama" }, { id: 8, name: "Ecchi" }, { id: 9, name: "Fantasy" },
-          { id: 10, name: "Game" }, { id: 11, name: "Harem" }, { id: 12, name: "Historical" },
-          { id: 13, name: "Horror" }, { id: 14, name: "Isekai" }, { id: 15, name: "Josei" },
-          { id: 16, name: "Kids" }, { id: 17, name: "Magic" }, { id: 18, name: "Martial Arts" },
-          { id: 19, name: "Mecha" }, { id: 20, name: "Military" }, { id: 21, name: "Music" },
-          { id: 22, name: "Mystery" }, { id: 23, name: "Parody" }, { id: 24, name: "Police" },
-          { id: 25, name: "Psychological" }, { id: 26, name: "Romance" }, { id: 27, name: "Samurai" },
-          { id: 28, name: "School" }, { id: 29, name: "Sci-Fi" }, { id: 30, name: "Seinen" },
-          { id: 31, name: "Shoujo" }, { id: 32, name: "Shoujo Ai" }, { id: 33, name: "Shounen" },
-          { id: 34, name: "Shounen Ai" }, { id: 35, name: "Slice of Life" }, { id: 36, name: "Space" },
-          { id: 37, name: "Sports" }, { id: 38, name: "Super Power" }, { id: 39, name: "Supernatural" },
-          { id: 40, name: "Thriller" }, { id: 41, name: "Vampire" }
+          { id: 8, name: "Drama" }, { id: 9, name: "Ecchi" }, { id: 10, name: "Fantasy" },
+          { id: 11, name: "Game" }, { id: 35, name: "Harem" }, { id: 13, name: "Historical" },
+          { id: 14, name: "Horror" }, { id: 44, name: "Isekai" }, { id: 43, name: "Josei" },
+          { id: 15, name: "Kids" }, { id: 16, name: "Magic" }, { id: 17, name: "Martial Arts" },
+          { id: 18, name: "Mecha" }, { id: 38, name: "Military" }, { id: 19, name: "Music" },
+          { id: 7, name: "Mystery" }, { id: 20, name: "Parody" }, { id: 39, name: "Police" },
+          { id: 40, name: "Psychological" }, { id: 22, name: "Romance" }, { id: 21, name: "Samurai" },
+          { id: 23, name: "School" }, { id: 24, name: "Sci-Fi" }, { id: 42, name: "Seinen" },
+          { id: 25, name: "Shoujo" }, { id: 26, name: "Shoujo Ai" }, { id: 27, name: "Shounen" },
+          { id: 28, name: "Shounen Ai" }, { id: 36, name: "Slice of Life" }, { id: 29, name: "Space" },
+          { id: 30, name: "Sports" }, { id: 31, name: "Super Power" }, { id: 37, name: "Supernatural" },
+          { id: 41, name: "Thriller" }, { id: 32, name: "Vampire" }
 ];
 
 const createOptions = (items) => items.map(i => ({ name: i, value: i.toLowerCase().replace(/ /g, '_') }));
@@ -126,24 +126,24 @@ export default function FilterPage() {
                     return (
                               <div className="flex flex-wrap justify-center gap-2 pt-10 pb-5 bg-neutral-950">
                                         <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">«</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">«</button>
                                         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">‹</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">‹</button>
 
                                         {visiblePages.map((page) => (
                                                   <button key={page} onClick={() => handlePageChange(page)}
                                                             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${currentPage === page
-                                                                      ? 'bg-green-200 text-black'
-                                                                      : 'bg-[#1f1f1f] text-gray-300 hover:bg-green-200 hover:text-black'
+                                                                      ? 'bg-rose-500 text-white'
+                                                                      : 'bg-[#1f1f1f] text-gray-300 hover:bg-rose-500 hover:text-white'
                                                                       }`}>
                                                             {page}
                                                   </button>
                                         ))}
 
                                         <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">›</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">›</button>
                                         <button onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages}
-                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-green-200 hover:text-black disabled:opacity-40">»</button>
+                                                  className="w-8 h-8 rounded-full bg-[#1f1f1f] text-white hover:bg-rose-500 hover:text-white disabled:opacity-40">»</button>
                               </div>
                     );
           };
@@ -165,11 +165,11 @@ export default function FilterPage() {
                                         <div className="mb-5">
                                                   <h3 className="text-lg text-white font-semibold mb-2">Genres</h3>
                                                   <div className="flex flex-wrap gap-2">
-                                                            {genres.map(genre => (
+                                                            {genres.map((genre, idx) => (
                                                                       <Button
-                                                                                key={genre.id}
+                                                                                key={idx}
                                                                                 onClick={() => handleGenreToggle(genre.id)}
-                                                                                className={`text-sm ${selectedGenres.includes(genre.id) ? 'bg-green-200 text-black hover:bg-green-300' : 'bg-neutral-800  hover:bg-neutral-900 text-white'}`}
+                                                                                className={`text-sm ${selectedGenres.includes(genre.id) ? 'bg-rose-500 text-white hover:bg-rose-600' : 'bg-neutral-800  hover:bg-neutral-900 text-white'}`}
                                                                       >
                                                                                 {genre.name}
                                                                       </Button>
@@ -177,18 +177,18 @@ export default function FilterPage() {
                                                   </div>
                                         </div>
 
-                                        <Button onClick={handleFilter} className='mt-2 mb-5 md:mt-4 bg-green-200 hover:bg-green-300 text-black px-6 py-3'>
+                                        <Button onClick={handleFilter} className='mt-2 mb-5 md:mt-4 bg-rose-500 hover:bg-rose-600 text-white px-6 py-3'>
                                                   Apply Filters
                                         </Button>
                               </div>
 
                               {loading ? (
                                         <div className="flex justify-center items-center mt-10">
-                                                  <Loader2Icon className="h-10 w-10 animate-spin text-green-200" />
+                                                  <Loader2Icon className="h-10 w-10 animate-spin text-rose-500" />
                                         </div>
                               ) : (
                                         <div>
-                                                  <h2 className='text-2xl text-green-200 font-semibold px-3 mb-2'>Filter Results</h2>
+                                                  <h2 className='text-2xl text-rose-500 font-semibold px-3 mb-2'>Filter Results</h2>
                                                   <FilterCard list={list} />
 
                                                   {totalPages > 1 && (
@@ -203,7 +203,7 @@ export default function FilterPage() {
 const FilterSelect = ({ label, value, onValueChange, options }) => (
           <div className="flex flex-wrap gap-1">
                     <Select value={value} onValueChange={onValueChange}>
-                              <SelectTrigger className="bg-[#383536] border-gray-500 text-green-200">
+                              <SelectTrigger className="bg-[#383536] border-gray-500 text-rose-500">
                                         <div className='flex items-center gap-3'>
                                                   {label && <Label className="text-white text-sm">{label}</Label>}
                                                   <SelectValue placeholder="Select" />

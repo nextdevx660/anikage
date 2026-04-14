@@ -41,7 +41,7 @@ export default function AnimeLandingPage() {
 
                                                   {/* Download Button */}
                                                   <div className='pt-4'>
-                                                            <button className='w-full bg-green-200 hover:bg-green-300 text-black font-bold text-lg py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-colors duration-200 shadow-lg'>
+                                                            <button className='w-full bg-rose-500 hover:bg-rose-600 text-white font-bold text-lg py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-colors duration-200 shadow-lg'>
                                                                       <Download strokeWidth={2.5} size={24} />
                                                                       <span>Download for android</span>
                                                             </button>

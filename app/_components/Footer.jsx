@@ -50,7 +50,7 @@ export default function Footer() {
   return (
     <div className='bg-neutral-950 pt-20'>
       <div className='p-5 flex items-center gap-4'>
-        <h1 className='text-white text-3xl md:text-4xl font-bold border-r-1 border-gray-600 p-2'>An<span className='text-green-200'>!</span>Look</h1>
+        <h1 className='text-white text-3xl md:text-4xl font-bold border-r-1 border-gray-600 p-2'>An<span className='text-rose-500'>!</span>Kage</h1>
         <div className="flex flex-wrap gap-2">
           {icons.map((item, idx) => (
             <a
@@ -73,18 +73,18 @@ export default function Footer() {
 
       <div className='flex flex-wrap gap-2 px-5'>
         <Link href={'/az-list/'}>
-          <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-green-200 hover:text-black'>All</button>
+          <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-rose-500 hover:text-white'>All</button>
         </Link>
         {
           list.map((item, index) => (
             <Link href={'/az-list/' + item?.value} key={index}>
-              <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-green-200 hover:text-black'>{item?.name}</button>
+              <button className='bg-[#3e3a3c] px-3 py-1 text-white font-semibold rounded-md hover:bg-rose-500 hover:text-white'>{item?.name}</button>
             </Link>
           ))
         }
       </div>
-      <p className='text-gray-500 text-light text-sm md:text-md px-5 mt-5'>AniLook does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p>
-      <p className='text-gray-500 text-light text-md md:text-lg px-5'>© AniLook. All rights reserved.</p>
+      <p className='text-gray-500 text-light text-sm md:text-md px-5 mt-5'>AniKage does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p>
+      <p className='text-gray-500 text-light text-md md:text-lg px-5 pb-5'>© AniKage. All rights reserved.</p>
     </div>
   )
 }

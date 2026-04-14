@@ -10,6 +10,8 @@ import { useAuth } from '../_context/AuthContext';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { useRouter } from 'next/navigation';
+import { FaRandom } from "react-icons/fa";
+import axios from 'axios';
 
 export default function Header() {
   const [userData, setUserData] = useState({})
@@ -42,6 +44,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+  const handleRandomClick = async () => {
+    const res = await axios.get('https://anime-api-zeta-hazel.vercel.app/api/random')
+    router.push(`/${res.data.results.id}`)
+    // console.log(res.data.results);
+  }
+
   return (
     <>
       <header
@@ -54,15 +63,18 @@ export default function Header() {
         <div className="flex items-center">
           <MenuWithSidebar />
           <Link href={'/'}>
-            <Image src="/logo.png" alt="logo" 
-            width={100}
-            height={100}
-            className='w-full h-10' />
+            <h1 className='text-3xl text-white font-bold'>An<span className='text-rose-500'>!</span>Kage</h1>
           </Link>
 
           {/* Search input visible only on md and up */}
           <div className="hidden md:block pl-4">
-            <SearchInput />
+            <div className='flex items-center gap-15'>
+              <SearchInput />
+              <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => {handleRandomClick()}}>
+                <FaRandom color="oklch(64.5% 0.246 16.439)" size={20} />
+                <h1 className="text-white text-sm hover:text-rose-500">Random</h1>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -76,23 +88,23 @@ export default function Header() {
             <Search size={24} />
           </div>
 
-          {
-            user &&  <div
-            className="text-white cursor-pointer hover:bg-white/20 transition font-bold"
-            onClick={() => setShowSearchInput(prev => !prev)}
-          >
-            <Bell size={24} onClick={redirectToNotify} />
-          </div>
-          }
+          {/* {
+            user && <div
+              className="text-white cursor-pointer hover:bg-white/20 transition font-bold"
+              onClick={() => setShowSearchInput(prev => !prev)}
+            >
+              <Bell size={24} onClick={redirectToNotify} />
+            </div>
+          } */}
 
           {!user ?
-            <Link href={'/signup'} className="bg-green-200 text-black font-medium px-4 py-1.5 rounded-lg hover:bg-green-300 transition">
-            <button>
-              Login
-            </button>
+            <Link href={'/login'} className="bg-rose-500 text-white font-medium px-4 py-1.5 rounded-lg hover:bg-rose-600 transition">
+              <button>
+                Login
+              </button>
             </Link> :
             <div>
-              {userData?.photoUrl && <Link href={'/profile'}><Image src={userData?.photoUrl} alt='logo' width={100} height={100} className='w-8 h-8 rounded-full' /></Link>}
+              {userData?.photoUrl && <Link href={'/profile'}><Image src={userData?.photoUrl} alt='logo' width={100} height={100} className='w-8 h-8 rounded-full border-2 border-rose-500' /></Link>}
             </div>
           }
         </div>

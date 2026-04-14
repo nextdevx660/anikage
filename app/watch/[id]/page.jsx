@@ -1,5 +1,6 @@
 'use client'
 
+import CANDV from '@/app/_components/CANDV'
 import Genre from '@/app/_components/Genre'
 import RecomendedCard from '@/app/_components/RecomendedCard'
 import axios from 'axios'
@@ -41,7 +42,7 @@ export default function Page() {
     }
   };
 
-  console.log(animeData);
+  // console.log(animeData);
 
 
 
@@ -99,20 +100,20 @@ export default function Page() {
           <div className='overflow-y-auto h-[480px] no-scrollbar'>
             {episodes &&
               episodes.map((item, index) => (
-                <Link href={`${item?.id}`} key={index}>
+                <Link href={`/watch/${id}?ep=${item?.id}`} key={index}>
                   <div
-                    className={`${episodeId !== item?.id
+                    className={`${ep !== item?.id
                       ? `flex items-center justify-between ${bgColors[index % 2]} px-4 py-2 cursor-pointer hover:bg-[#3a3738]`
-                      : `flex items-center justify-between bg-gray-200/50 text-green-200 px-4 py-2 cursor-pointer hover:bg-[#3a3738] border-l-4 border-green-200`
+                      : `flex items-center justify-between bg-gray-200/50 text-rose-500 px-4 py-2 cursor-pointer hover:bg-[#3a3738] border-l-4 border-rose-500`
                       }`}
                   >
                     <div className='flex items-center gap-5'>
                       <h2 className='text-gray-200 text-md'>{item?.episode_no}</h2>
                       <h2 className='text-gray-200 text-md'>{item?.title}</h2>
                     </div>
-                    {episodeId == item?.id && (
+                    {ep == item?.id && (
                       <div>
-                        <PlayCircle className='text-green-200' />
+                        <PlayCircle className='text-rose-500' />
                       </div>
                     )}
                   </div>
@@ -130,7 +131,7 @@ export default function Page() {
               <div>
                 <div className='flex md:flex-col gap-3'>
                   <div className='relative'>
-                    {animeData?.adultContent == true ? <h2 className='bg-green-300 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
+                    {animeData?.adultContent == true ? <h2 className='bg-rose-600 px-1 py-0.5 rounded-md text-white absolute top-2 left-2'>18+</h2> : ''}
                     {animeData?.poster && <Image src={animeData?.poster} alt={animeData?.title} width={500} height={500} className='w-25 md:w-30' />}
                   </div>
                   <div className='flex flex-col gap-2'>
@@ -138,9 +139,9 @@ export default function Page() {
                     <div className='flex flex-wrap items-center justify-center md:justify-start text-xs gap-2'>
                       <div className='gap-0.5 flex items-center'>
                         {animeData?.animeInfo?.tvInfo?.rating && <span className='bg-white text-black px-2 py-0.5 rounded-tl-sm rounded-bl-sm'>{animeData?.animeInfo?.tvInfo?.rating}</span>}
-                        {animeData?.animeInfo?.tvInfo?.quality && <span className='bg-green-200 text-black px-2 py-0.5'>{animeData?.animeInfo?.tvInfo?.quality}</span>}
-                        {animeData?.animeInfo?.tvInfo?.sub && <span className='bg-green-200 text-black px-2 py-0.5'>{animeData?.animeInfo?.tvInfo?.sub}</span>}
-                        {animeData?.animeInfo?.tvInfo?.dub && <span className='bg-purple-200 text-black px-2 py-0.5 flex items-center gap-1'><Mic size={14} /> {animeData?.animeInfo?.tvInfo?.dub}</span>}
+                        {animeData?.animeInfo?.tvInfo?.quality && <span className='bg-rose-500 text-white px-2 py-0.5'>{animeData?.animeInfo?.tvInfo?.quality}</span>}
+                        {animeData?.animeInfo?.tvInfo?.sub && <span className='bg-rose-500 text-white px-2 py-0.5'>{animeData?.animeInfo?.tvInfo?.sub}</span>}
+                        {animeData?.animeInfo?.tvInfo?.dub && <span className='bg-[#00e5a0] text-white px-2 py-0.5 flex items-center gap-1'><Mic size={14} /> {animeData?.animeInfo?.tvInfo?.dub}</span>}
                       </div>
                       <span className='text-gray-400'>•</span>
                       <span className='text-white text-sm'>{animeData?.showType}</span>
@@ -155,7 +156,7 @@ export default function Page() {
                     <p className="font-light">
                       <span className="font-semibold">Overview: </span> {animeData?.animeInfo?.Overview}
                     </p> :
-                    <p className='text-green-200'>Overview is not available</p>
+                    <p className='text-rose-500'>Overview is not available</p>
                   }
                 </div>
                 <p className='text-sm text-gray-200 mt-5'>AniLook is the best site to watch <span className='text-white'>{animeData?.title}</span> SUB online, or you can even watch <span className='font-semibold text-white'>{animeData?.title}</span> DUB in HD quality. You can also find <span className='font-semibold text-white'>{animeData?.animeInfo?.Studios}</span> anime on AniLook website.</p>
@@ -171,11 +172,11 @@ export default function Page() {
         {otherSeasons.length > 0 && <h2 className="text-white text-xl font-semibold mb-4">Watch more seasons of this anime</h2>}
 
         {otherSeasons.length > 0 && (
-          <div className='flex items-center flex-wrap gap-4 mt-5'>
+          <div className='flex items-center flex-wrap gap-2 mt-5'>
             {otherSeasons.map((season, idx) => (
               <Link href={`/${season.id}`} key={idx}
-                className={`relative group cursor-pointer w-40 h-16 overflow-hidden rounded-md border-2 
-            ${animeData?.data_id == season?.data_id ? 'border-green-200 text-green-200' : 'border-transparent text-white'}`}>
+                className={`relative group cursor-pointer w-36 h-16 overflow-hidden rounded-md border-2 
+            ${animeData?.data_id == season?.data_id ? 'border-rose-500 text-rose-500' : 'border-transparent text-white'}`}>
                 <div>
                   {/* Background Image */}
                   <Image
@@ -202,7 +203,8 @@ export default function Page() {
       </div>
       <div className='md:flex'>
         <div className='px-3'>
-          <h2 className='text-2xl font-semibold text-green-200 mt-10'>Recomended for You</h2>
+          <CANDV animeData={animeData} />
+          <h2 className='text-2xl font-semibold text-rose-500 mt-10'>Recomended for You</h2>
           <RecomendedCard recomended={recomended} />
         </div>
         <Genre />

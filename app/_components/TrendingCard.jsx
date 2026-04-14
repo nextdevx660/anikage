@@ -5,26 +5,59 @@ import Link from "next/link";
 import React from "react"
 
 export default function TrendingCard({ trending }) {
+          console.log(trending);
 
           return (
-                    <div className="flex items-center gap-0.5 md:gap-3 mt-5 overflow-x-auto no-scrollbar">
+                    <div className="flex items-center gap-0.5 md:gap-3 mt-5 overflow-x-auto overflow-y-hidden no-scrollbar">
                               {trending &&
                                         trending.map((item, index) => (
                                                   <Link href={item?.id} key={index}>
-                                                            <div className="flex-shrink-0 w-40 md:w-50 h-80">
-                                                                      <div className="relative">
-                                                                                {item?.poster && (
+                                                            <div className="hidden md:block">
+                                                                      <div className="grid w-60 h-70 grid-cols-[15%_85%] gap-0.5">
+
+                                                                                {/* LEFT COLUMN */}
+                                                                                <div className="h-full flex flex-col items-end justify-end">
+
+                                                                                          {/* TITLE (Vertical) */}
+                                                                                          <h1 className="[writing-mode:vertical-lr] rotate-180 text-white font-bold text-xl text-left">
+                                                                                                    {item?.title.length > 15
+                                                                                                              ? item?.title.slice(0, 15) + "..."
+                                                                                                              : item?.title}
+                                                                                          </h1>
+
+                                                                                          {/* NUMBER BELOW TITLE */}
+                                                                                          <h2 className="text-rose-500 font-bold text-2xl">
+                                                                                                    {item?.number}
+                                                                                          </h2>
+
+                                                                                </div>
+
+                                                                                {/* RIGHT COLUMN (IMAGE) */}
+                                                                                <div className="relative w-full h-full">
                                                                                           <Image
                                                                                                     src={item?.poster}
                                                                                                     alt={item?.title}
-                                                                                                    width={300}
-                                                                                                    height={300}
-                                                                                                    className="w-40 md:w-60 aspect-[3/4]"
+                                                                                                    fill
+                                                                                                    className="object-cover"
                                                                                           />
-                                                                                )}
-                                                                                <h2 className="absolute font-bold text-black text-xl left-0 bg-white top-0 p-1 md:text-green-200 md:top-2 md:left-2 md:bg-transparent">#{item?.number}</h2>
+                                                                                </div>
+
                                                                       </div>
-                                                                      <h2 className="text-white font-bold hidden md:block">{(item?.title).slice(0, 17)}...</h2>
+                                                            </div>
+
+                                                            <div className="block md:hidden">
+                                                                      <div className="relative w-50 h-70">
+                                                                                <Image
+                                                                                src={item?.poster}
+                                                                                alt="posetr"
+                                                                                width={500}
+                                                                                height={500}
+                                                                                className="aspect-3/4 w-50 h-70 object-cover"
+                                                                                />
+                                                                                <div className="absolute top-0 left-0 bg-white px-2 py-1 aspect-square font-bold">
+                                                                                          {item?.number}
+                                                                                </div>
+                                                                      </div>    
                                                             </div>
                                                   </Link>
                                         ))

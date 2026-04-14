@@ -5,6 +5,7 @@ import { Calendar, Clock, Loader2Icon, MicIcon, Play } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState, useCallback } from 'react';
+import { BsFillBadgeCcFill } from "react-icons/bs";
 
 export default function Slider() {
           const [spotlights, setSpotlights] = useState([]);
@@ -26,7 +27,7 @@ export default function Slider() {
 
                               if (episodes && episodes.length > 0) {
                                         const firstEpisodeId = episodes[0].id;
-                                        router.push(`/watch/${firstEpisodeId}`);
+                                        router.push(`/watch/${id}?ep=${firstEpisodeId}`);
                               } else {
                                         console.warn("No episodes found for anime:", id);
                               }
@@ -42,6 +43,7 @@ export default function Slider() {
                               setLoading(true);
                               const resp = await axios.get("https://anime-api-zeta-hazel.vercel.app/api/");
 
+                              // console.log(resp.data.results.spotlights);
 
 
                               if (resp.data.results && resp.data.results.spotlights) {
@@ -97,7 +99,7 @@ export default function Slider() {
 
           return (
                     <>
-                              {!spotlights.length == 0 && <div className="relative w-full h-[300px] md:h-[600px] overflow-hidden bg-black">
+                              {!spotlights.length == 0 && <div className="relative w-full h-[300px] md:h-[600px] overflow-hidden bg-neutral-950">
                                         {/* Slide Container */}
                                         <div
                                                   className="relative w-full h-full flex transition-transform duration-700 ease-in-out"
@@ -117,21 +119,21 @@ export default function Slider() {
                                                                       {/* Content */}
                                                                       <div className="relative z-10 flex items-center h-full px-6 md:px-16">
                                                                                 <div className="max-w-2xl text-white space-y-6">
-                                                                                          <p className="text-green-200 font-semibold text-sm md:text-lg">#{index + 1} Spotlight</p>
+                                                                                          <p className="text-rose-500 text-sm md:text-lg">#{index + 1} Spotlight</p>
                                                                                           <h1 className="text-xl md:text-5xl font-bold leading-tight">{anime.title}</h1>
                                                                                           <div className='hidden md:block'>
                                                                                                     <div className="flex flex-wrap items-center gap-3 text-sm text-gray-300">
                                                                                                               {anime?.tvInfo?.showType && <span className='flex items-center gap-1'><Play size={16} /> {anime?.tvInfo?.showType}</span>}
                                                                                                               {anime?.tvInfo?.duration && <span className='flex items-center gap-1'><Clock size={16} />  {anime?.tvInfo?.duration}</span>}
                                                                                                               {anime?.tvInfo?.releaseDate && <span className='flex items-center gap-1'><Calendar size={16} /> {anime?.tvInfo?.releaseDate}</span>}
-                                                                                                              {anime?.tvInfo?.quality && <span className="px-1 py-0.5 text-sm bg-purple-200 text-black font-semibold rounded">{anime?.tvInfo?.quality}</span>}
-                                                                                                              {anime?.tvInfo?.episodeInfo?.sub && <span className="bg-green-200 px-1 py-0.5 text-black font-semibold rounded">CC {anime?.tvInfo?.episodeInfo?.sub}</span>}
-                                                                                                              {anime?.tvInfo?.episodeInfo?.dub && <span className=" px-1 py-0.5 bg-pink-200 text-black font-semibold rounded flex items-center gap-1"><MicIcon size={13} /> {anime?.tvInfo?.episodeInfo?.sub}</span>}
+                                                                                                              {/* {anime?.tvInfo?.quality && <span className="px-1 py-0.5 text-sm bg-[#00e5a0] text-white font-semibold rounded">{anime?.tvInfo?.quality}</span>} */}
+                                                                                                              {anime?.tvInfo?.quality?.sub && <span className="bg-rose-500 text-xs px-1 py-0.5 text-white rounded flex items-center gap-1"><BsFillBadgeCcFill size={15} /> {anime?.tvInfo?.quality?.sub}</span>}
+                                                                                                              {anime?.tvInfo?.quality?.dub && <span className="text-xs px-1 py-0.5 bg-[#00e5a0] text-white font-semibold rounded flex items-center gap-1"><MicIcon size={15} /> {anime?.tvInfo?.quality?.sub}</span>}
                                                                                                     </div>
                                                                                           </div>
                                                                                           <p className="text-gray-300 text-sm md:text-md line-clamp-3">{anime.description}</p>
                                                                                           <div className="flex gap-4">
-                                                                                                    <button className="bg-green-200 text-black font-semibold px-6 py-2 rounded-full hover:bg-green-300 transition duration-300 flex items-center gap-1" onClick={() => getAnimeId(anime?.id)}>
+                                                                                                    <button className="bg-rose-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-rose-600 cursor-pointer transition duration-300 flex items-center gap-1" onClick={() => getAnimeId(anime?.id)}>
                                                                                                               <Play size={20} /> Watch Now
                                                                                                     </button>
                                                                                                     <Link href={'/' + anime?.id}>

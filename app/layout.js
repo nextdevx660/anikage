@@ -4,7 +4,8 @@ import Header from "./_components/Header";
 // import ClickRedirectWrapper from "./wrapper";
 import Footer from "./_components/Footer";
 import { AuthProvider } from "./_context/AuthContext";
-import AdsProvider from "./adsProvider";
+import { Toaster } from "sonner";
+// import AdsProvider from "./adsProvider";
 
 
 
@@ -19,18 +20,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning={true} className="no-scrollbar">
       <body
-        className={`${outfit.className} bg-neutral-950 no scrollbar`}
+        className={`${outfit.className} bg-neutral-950 no-scrollbar`}
       >
         {/* <ClickRedirectWrapper>  */}
-        // <AdsProvider>
+        {/* // <AdsProvider> */}
           <AuthProvider>
             <Header />
             {children}
+            <Toaster />
             <Footer />
           </AuthProvider>
-        // </AdsProvider>
+        {/* // </AdsProvider> */}
         {/* </ClickRedirectWrapper>  */}
       </body>
     </html >

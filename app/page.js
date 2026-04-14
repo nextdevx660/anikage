@@ -32,7 +32,7 @@ export default function Home() {
           <LatestEpisodes />
           <NewOnAniLook />
           <TopUpcoming />
-          // <div>
+          {/* // <div>
           //   <h2 className="text-2xl text-white pt-4 pb-2 font-bold">Sponserships</h2>
           //   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center">
           //     <AdsBanner />
@@ -42,7 +42,7 @@ export default function Home() {
           //     <AdsBanner />
           //     <AdsBanner />
           //   </div>
-          // </div>
+          // </div> */}
         </div>
         <Genre />
       </div>

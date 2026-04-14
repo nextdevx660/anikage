@@ -31,7 +31,9 @@ export default function SearchInput() {
                               const res = await axios.get(
                                         `https://anime-api-zeta-hazel.vercel.app/api/search/suggest?keyword=${keyword}`
                               )
-                              setSuggestions(res?.data?.results || [])
+                              setSuggestions(res?.data?.results.slice(0,5) || [])
+                              // console.log(res?.data?.results);
+                              
                     } catch (error) {
                               console.error('Error fetching suggestions:', error)
                     }
@@ -55,10 +57,15 @@ export default function SearchInput() {
                     }
           }
 
+          const handleClickAfterView = () => {
+                    setKeyword('')
+                    setSuggestions([])
+          }
+
           return (
                     <div>
                               <div>
-                                        <div className="bg-white px-3 py-2 flex items-center gap-2 w-screen md:w-[400px]">
+                                        <div className="bg-white px-3 py-2 flex items-center gap-2 w-screen md:w-[400px] mt-1">
                                                   <input
                                                             type="text"
                                                             name="search"
@@ -98,7 +105,7 @@ export default function SearchInput() {
                                                                                           />
                                                                                 </div>
                                                                                 <div className='grid gap-1'>
-                                                                                          <h2 className='text-white text-lg font-semibold hover:text-green-200'>
+                                                                                          <h2 className='text-white text-lg font-semibold hover:text-rose-500'>
                                                                                                     {sug?.title.length <= 30 ? sug?.title : `${sug?.title.slice(0, 30)}...`}
                                                                                           </h2>
                                                                                           <h2 className='text-gray-400 text-sm'>
@@ -107,7 +114,7 @@ export default function SearchInput() {
                                                                                                               : `${sug?.japanese_title.slice(0, 30)}...`}
                                                                                           </h2>
                                                                                           <div className='flex items-center gap-2'>
-                                                                                                    <h2 className='text-gray-400 text-sm'>{sug?.releaseDate}</h2>
+                                                                                                    <h2 className='text-gray-400 text-sm'>{sug?.duration}</h2>
                                                                                                     <h2 className='text-gray-400 text-md'>•</h2>
                                                                                                     <h2 className='text-white text-sm'>{sug?.showType}</h2>
                                                                                                     <h2 className='text-gray-400 text-md'>•</h2>
@@ -117,11 +124,11 @@ export default function SearchInput() {
                                                                       </div>
                                                             </div>
                                                   ))}
-                                                  <Link href={`/search?keyword=${keyword}`}>
-                                                            <div className='bg-green-200 px-2 py-4 flex items-center justify-center'>
-                                                                      <h2 className='flex items-center gap-1'>
+                                                  <Link href={`/search?keyword=${keyword}`} onClick={() => {handleClickAfterView()}}>
+                                                            <div className='bg-rose-500 px-2 py-4 flex items-center justify-center hover:bg-rose-600 transition'>
+                                                                      <h2 className='flex items-center gap-1 text-white'>
                                                                                 View All Results
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#1f1f1f">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#fff">
                                                                                           <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
                                                                                 </svg>
                                                                       </h2>
