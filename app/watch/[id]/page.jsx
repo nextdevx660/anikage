@@ -4,11 +4,13 @@ import CANDV from '@/app/_components/CANDV'
 import Genre from '@/app/_components/Genre'
 import RecomendedCard from '@/app/_components/RecomendedCard'
 import axios from 'axios'
-import { Mic, PlayCircle } from 'lucide-react'
+import { Mic, MicIcon, PlayCircle } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useParams, useSearchParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
+import { BsFillBadgeCcFill } from "react-icons/bs";
+import { FaMicrophoneAlt } from "react-icons/fa";
 
 export default function Page() {
   const [streamingUrl, setStreamingUrl] = useState('')
@@ -19,19 +21,43 @@ export default function Page() {
   const [recomended, setRecomended] = useState([])
   const [episodeId, setEpisodeId] = useState()
   const [otherSeasons, setOtherSeasons] = useState([]);
+  const [servers, setServers] = useState([])
+  const [currentServer, setCurrentServer] = useState("Vidcloud")
+  const [videoType, setVideoType] = useState("sub")
+  const [subServer, setSubServer] = useState([])
+  const [dubServer, setDubServer] = useState([])
+  const [activeServer, setActiveServer] = useState(null);
 
   const ep = searchParams.get('ep') || ''
   const id = params?.id || '';
 
-
-
   useEffect(() => {
-    if (id && ep) {
-      const url = `https://gogoanime.me.uk/newplayer.php?id=${id}?ep=${ep}&type=hd-1&category=sub`
-      setStreamingUrl(url)
-      setEpisodeId(`${id}?ep=${ep}`) // Update current playing episodeId
+    const getAnimeStreamingInfo = async () => {
+      const res = await axios.get(
+        `https://anime-api-zeta-hazel.vercel.app/api/stream?id=${ep}&server=${currentServer}&type=${videoType}`
+      );
+
+      setStreamingUrl(res.data.results.streamingLink.iframe)
+      setServers(res.data.results.servers)
+      console.log(res.data.results.servers);
     }
-  }, [id, ep])
+
+    if (ep) getAnimeStreamingInfo()
+  }, [ep, currentServer, videoType])
+
+  // ✅ servers change hone pe filter karo
+  useEffect(() => {
+    setSubServer(servers.filter((s) => s.type === 'sub'))
+    setDubServer(servers.filter((s) => s.type === 'dub'))
+  }, [servers])
+
+  // useEffect(() => {
+  //   if (id && ep) {
+  //     const url = `https://gogoanime.me.uk/newplayer.php?id=${id}?ep=${ep}&type=hd-1&category=sub`
+  //     setStreamingUrl(url)
+  //     setEpisodeId(`${id}?ep=${ep}`) // Update current playing episodeId
+  //   }
+  // }, [id, ep])
 
   const getEpisodes = async () => {
     try {
@@ -68,6 +94,26 @@ export default function Page() {
   }, [])
 
 
+  const handleServerChange = (server) => {
+    setCurrentServer(server.serverName)
+    setVideoType(server.type)
+    setActiveServer(server.data_id) // Set active server to the selected one
+  }
+
+
+  useEffect(() => {
+    if (subServer.length > 0 && !activeServer) {
+      setActiveServer(subServer[0].data_id)
+      setCurrentServer(subServer[0].serverName)
+      setVideoType(subServer[0].type)
+    }
+  }, [subServer])
+
+
+
+
+
+
 
   const bgColors = [
     'bg-neutral-950', 'bg-[#1e1c1d]'
@@ -90,6 +136,53 @@ export default function Page() {
                 ></iframe>
               </div>
             )}
+
+            <div className='flex flex-col md:flex-row items-center rounded-md mt-4 w-full md:w-170 h-70 md:h-40'>
+              <div className='bg-rose-500 w-full md:w-[30%] p-4 h-full md:rounded-l-lg'>
+                <h2 className='text-white text-md mt-2 text-center'>If the video doesn't load, try changing the server or video type from the options below.</h2>
+              </div>
+              <div className='bg-neutral-800 w-full md:w-[70%] flex flex-col items-start h-full md:rounded-r-lg'>
+                <div className='flex items-center gap-2 p-4 w-full h-[50%]'>
+                  <BsFillBadgeCcFill size={15} className='text-rose-500' />
+                  <h1 className='text-white font-semibold mr-3'>SUB:</h1>
+                  {
+                    subServer.map((ser, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleServerChange(ser)}
+                        className={`px-4 py-2 rounded-md text-sm text-white 
+        ${activeServer === ser.data_id
+                            ? 'bg-rose-500'
+                            : 'bg-neutral-900 hover:bg-rose-600'}`}
+                      >
+                        {ser.serverName}
+                      </button>
+                    ))
+                  }
+                </div>
+                {dubServer.length > 0 && <div className='border border-neutral-700 w-full'></div>}
+                {dubServer.length > 0 && <div className='flex items-center gap-2 p-4 h-[50%]'>
+                  <FaMicrophoneAlt size={15} className='text-rose-500' />
+                  <h1 className='text-white font-semibold mr-3'>DUB:</h1>
+                  {
+                    dubServer.map((ser, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleServerChange(ser)}
+                        className={`px-4 py-2 rounded-md text-sm text-white 
+        ${activeServer === ser.data_id
+                            ? 'bg-rose-500'
+                            : 'bg-neutral-900 hover:bg-rose-600'}`}
+                      >
+                        {ser.serverName}
+                      </button>
+                    ))
+                  }
+                </div>}
+              </div>
+            </div>
+
+
           </div>
         </div>
 
