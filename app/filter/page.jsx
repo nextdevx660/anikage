@@ -34,7 +34,8 @@ const genres = [
           { id: 41, name: "Thriller" }, { id: 32, name: "Vampire" }
 ];
 
-const createOptions = (items) => items.map(i => ({ name: i, value: i.toLowerCase().replace(/ /g, '_') }));
+const createOptions = (items) => items.map((i, idx) => ({ name: i, value: idx}));
+
 
 const typeOptions = createOptions(['All', 'TV', 'Movie', 'OVA', 'ONA', 'Special', 'Music']);
 const statusOptions = createOptions(['All', 'Finished Airing', 'Currently Airing', 'Not yet aired']);
